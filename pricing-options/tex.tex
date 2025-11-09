@@ -1,0 +1,62 @@
+\documentclass[4pt]{extarticle}
+\usepackage[margin=0.1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,bm,physics}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{newtxtext, newtxmath}
+
+% add columns
+\usepackage{multicol}
+
+\setlength{\parskip}{4pt}
+\tcbset{colback=white,colframe=black!15,boxrule=0.5pt,arc=2pt,enhanced,breakable}
+
+% justified text in tcolorbox
+\par
+
+\begin{document}
+\begin{multicols*}{3}
+
+\textbf{Binomial Trees on a Risk-Neutral Word}
+\[ p^* = \frac{e^{(r-\delta)h}-d}{u-d}, \quad p^*=\frac{1}{1 + e^{\sigma\sqrt{h}}} \]
+\vspace{-1.5em}
+  \[
+  V_{i,j} = e^{-r h} \left( p^*(\text{payoff if $u$}) + (1-p^*) \text{payoff if $d$} \right).
+  \]
+  \vspace{-1.5em}
+\[
+V_0 = e^{-rT} \sum \binom{n}{k} (p^*)^k (1-p^*)^{n-k} (\text{payoff})
+\]
+\vspace{-1em}
+\[
+C(K,T) - P(K,T) = S_0 e^{-\delta T} - K e^{-rT}
+\]
+\vspace{-2.5em}
+\begin{center}
+  An increase is: \( e^{\delta h} \Delta S_u + e^{rh}B = C_u \) \\
+A decrease is: \( e^{\delta h} \Delta S_d + e^{rh}B = C_d \) \\
+\(\Delta = e^{-\delta h} \frac{C_u - C_d}{S_u - S_d} \) \\
+\( B = e^{-rh}(C_u - e^{\delta h} \Delta S_u) \)\\
+\( C_0 = \Delta S_0 + B \)
+\end{center}
+\vspace{-1em}
+Let \( h \) be the time step \( h = \frac{T}{n} \), if the Time is half a year and 4 steps, then \( h = \frac{1/2}{4} = \frac{1}{8} \). \\
+Let \( v \) be log-return over one time step \( h \).\\
+Let \( \sigma \) be the annualized volatility. \( \sigma^2 = \frac{v^2}{h} \)\ remember need of: \( d \leq e^{(r - \delta) h} \leq u \) Var de Ber is \( p (1-p) \). Hence, for \(u = d = 0.5\), the variance:
+\vspace{-1em}
+\[
+v^2 = 0.25 (\ln u - \ln d)^2
+\Rightarrow
+u = d e^{2 \sigma\sqrt{h}} 
+\]
+\vspace{-2em}
+\[
+u = e^{(r - \delta)h + \sigma\sqrt{h}}, \quad
+d = e^{(r - \delta)h - \sigma\sqrt{h}}
+\]
+
+
+\end{multicols*}
+\end{document}

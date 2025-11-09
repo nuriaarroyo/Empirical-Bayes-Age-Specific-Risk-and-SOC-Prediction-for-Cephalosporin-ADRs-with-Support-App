@@ -1,0 +1,104 @@
+\documentclass[4pt]{extarticle}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,bm,physics}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+% add columns
+\usepackage{multicol}
+
+\setlength{\parskip}{4pt}
+\tcbset{colback=white,colframe=black!15,boxrule=0.5pt,arc=2pt,enhanced,breakable}
+
+\begin{document}
+\begin{multicols*}{2}
+
+\textbf{Binomial Trees on a Risk-Neutral Word}
+
+\[ p^* = \frac{e^{(r-\delta)h}-d}{u-d} \]
+  \[
+  V_{i,j} = e^{-r h} \left( p^*(\text{payoff if $u$}) + (1-p^*) \text{payoff if $d$} \right).
+  \]
+Steps in a risk-neutral world:
+1. Fill the tree.  
+2. Compute the risk-neutral probability \( p^* \).  
+3. Compute the option payoffs at maturity.  
+4. Work backwards.  
+5. If the option is American, take the maximum.  
+6. The price at the root of the tree is the option price.
+
+
+Shortcut for not building the entire tree: Use the closed-form binomial pricing formula for European options:
+\[
+V_0 = e^{-rT} \sum_{k=m}^{n} \binom{n}{k} (p^*)^k (1-p^*)^{n-k} (\text{payoff})
+\]
+
+\textbf{Call-Put parity}
+For European options with strike \( K \) and maturity \( T \), the call-put parity with continuous dividend yield \( \delta \) is given by:
+\[
+C(K,T) - P(K,T) = S_0 e^{-\delta T} - K e^{-rT}
+\]
+
+\textbf{Replicating Portfolio}
+\begin{center}
+Let \( C_0 \) be the current price of a European call option on a stock with current price \( S_0 \). The stock can move up to \( S_u \) or down to \( S_d \) in one time step \( h \). The call option will have payoffs \( C_u \) and \( C_d \) in the up and down states, respectively. We want to replicate the option's payoffs using a portfolio consisting of \( \Delta \) shares of the stock and an amount \( B \) invested in a risk-free bond that grows at the continuous risk-free rate \( r \).
+The interpretation of \( \Delta \) is the number of shares of the stock held in the replicating portfolio, if its positive we are long the stock, if negative we are short the stock. \( B \) is the amount invested in the risk-free bond, if positive we are lending money, if negative we are borrowing money. 
+
+  An increase is: \( e^{\delta h} \Delta S_u + e^{rh}B = C_u \) \\
+A decrease is: \( e^{\delta h} \Delta S_d + e^{rh}B = C_d \) \\
+Subtracting the two equations: \\
+\( e^{\delta h}\Delta (S_u - S_d) = C_u - C_d \) \\
+\(\Rightarrow \Delta = e^{-\delta h} \frac{C_u - C_d}{S_u - S_d} \) \\
+Substituting back to find \( B \): \\
+\( B = e^{-rh}(C_u - e^{\delta h} \Delta S_u) \)\\
+Thus, the initial cost of the replicating portfolio is: \\
+\( C_0 = \Delta S_0 + B \)
+
+\end{center}
+
+
+
+
+
+
+
+
+\textbf{Binomial Trees with Volatility}
+
+Let \( T \) be the total time to maturity in years, and \( n \) be the number of steps in the binomial tree.\\
+Let \( h \) be the time step \( h = \frac{T}{n} \). For example, if the Time is half a year and there are 4 steps, then \( h = \frac{1/2}{4} = \frac{1}{8} \) years.\\
+Let \( v \) be the standard deviation of the log-return over one time step \( h \).\\
+Let \( \sigma \) be the annualized volatility. \( \sigma^2 = \frac{v^2}{h} \)\\
+Let \( \delta \) be the continuous dividend yield, and \( r \) be the continuous risk-free interest rate.
+
+\[
+d \leq e^{(r - \delta) h} \leq u
+\]
+The variance of a Bernoulli random variable \(X\) with \(\mathbb{P}(X=1)=p\) is
+
+\[
+\mathrm{Var}(X) = \mathbb{E}[X^2] - \mathbb{E}[X]^2 = p - p^2 = p(1-p).
+\]
+
+Hence, for \(u = d = 0.5\), the variance is:
+\[
+v^2 = 0.25 (\ln u - \ln d)^2
+\]
+\[
+u = d = e^{2 \sigma\sqrt{h}} 
+\]
+\[
+u = e^{(r - \delta)h + \sigma\sqrt{h}}
+\]
+\[
+d = e^{(r - \delta)h - \sigma\sqrt{h}}
+\]
+\[
+p^*=\frac{1}{1 + e^{\sigma\sqrt{h}}}
+\]
+
+
+\end{multicols*}
+\end{document}
