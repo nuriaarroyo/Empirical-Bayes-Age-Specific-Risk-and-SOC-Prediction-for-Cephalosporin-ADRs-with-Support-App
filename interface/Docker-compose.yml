@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  cephalo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cephalo
+    # Mount your repo so you can edit files on Windows and see changes inside the container
+    volumes:
+      - .:/workspace
+    # Where you will land when you open a shell
+    working_dir: /workspace
+    stdin_open: true   # allow interactive shell
+    tty: true          # allocate a TTY
+
+    # Optional: run something directly instead of opening bash
+    # command: ["python", "interface/main.py"]

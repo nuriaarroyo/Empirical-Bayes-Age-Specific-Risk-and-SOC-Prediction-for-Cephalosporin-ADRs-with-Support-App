@@ -1,0 +1,1 @@
+This folder is made to run independently from the project.
