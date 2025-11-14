@@ -1,0 +1,10 @@
+Government of Canada. (2023, November 8). Age (in single years), average age and median age and gender: Canada, provinces and territories, divisions of recensus and census subdivisions [Data set]. Open Government Portal. https://open.canada.ca/data/dataset/6acff169-8026-47ef-abec-3ec34e0b02fa (Open Government Canada)
+Government of Canada. (2025, May 29). Canada Vigilance Adverse Reaction Online Database – Data structure. Health Canada. https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada/adverse-reaction-database/canada-vigilance-adverse-reaction-online-database-data-structures.html (Canada)
+Government of Canada. (2023). Age (in years), average age and median age and gender: Canada, provinces and territories, divisions of recensus and census subdivisions [Data set]. Publications G C. https://publications.gc.ca/collections/collection_2024/statcan/91-215-x2023002-eng.pdf
+(No clearer specific date beyond year “2023” was available)
+Government of Canada. (n.d.). Archive — Age (in years), average age and median age and gender: Canada, provinces and territories, divisions of recensus and census subdivisions [Archived data set]. https://publications.gc.ca/site/archivee-archived.html?url=https%3A%2F%2Fpublications.gc.ca%2Fcollections%2Fcollection_2024%2Fstatcan%2F91-215-x2023002-eng.pdf
+(Accessed 2025 Nov 12)
+Government of Canada. (2020, June 29). Canadian Antimicrobial Resistance Surveillance System (CARSS) – Update 2020: Report. Public Health Agency of Canada. https://www.cahss.ca/CAHSS/Assets/Documents/CARSS-2020-Canadian-Antimicrobial-Resistance-Surveillance-System-Report-eng.pdf (Canada)
+Government of Canada. (n.d.). Canadian Antimicrobial Resistance Surveillance System (CARSS) [Web page]. https://health-infobase.canada.ca/carss/
+(Accessed 2025 Nov 12)
+Government of Canada. (2011). Canadian Integrated Program for Antimicrobial Resistance Surveillance (CIPARS) Human Antimicrobial Use Short Report, 2000–2009. Public Health Agency of Canada. https://www.phac-aspc.gc.ca/cipars-picra/2009/pdf/2009pr-eng.pdf (Public Health Agency of Canada)
